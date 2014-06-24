@@ -4,6 +4,7 @@
 import wx
 
 from preferences.ui import FramePreferencias
+from preferences.core import Preferences
 
 
 class FramePrincipal(wx.Frame):
@@ -55,7 +56,7 @@ class Compartir(wx.App):
     def __init__(self):
         super(Compartir, self).__init__(redirect=False)
 
-    preferencias = {}
+    preferences = Preferences()
 
     def OnInit(self):
         self.frame = FramePrincipal()
