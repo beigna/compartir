@@ -54,9 +54,8 @@ class FramePrincipal(wx.Frame):
 
 class Compartir(wx.App):
     def __init__(self):
+        self.preferences = Preferences()
         super(Compartir, self).__init__(redirect=False)
-
-    preferences = Preferences()
 
     def OnInit(self):
         self.frame = FramePrincipal()
