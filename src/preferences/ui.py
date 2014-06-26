@@ -14,7 +14,7 @@ class NotebookPreferencias(wx.Notebook):
         ttl_general = wx.StaticText(pnl_compartir, label=u'General')
         ttl_general.SetFont(wx.Font(10, wx.DEFAULT, wx.NORMAL, wx.BOLD))
 
-        chk_iniciar = wx.CheckBox(pnl_compartir, label=u'Iniciar Compartir automáticamente', name='auto_start')
+        chk_iniciar = wx.CheckBox(pnl_compartir, label=u'Iniciar Compartir automáticamente', name='autostart')
 
         sizer = wx.BoxSizer(wx.VERTICAL)
         szr_ttl = wx.BoxSizer(wx.HORIZONTAL)
@@ -103,7 +103,7 @@ class FramePreferencias(wx.Frame):
 
         tabs.FindWindowByName('name').SetValue(self.pref.profile.name)
         tabs.FindWindowByName('description').SetValue(self.pref.profile.description)
-        tabs.FindWindowByName('auto_start').SetValue(self.pref.compartir.auto_start)
+        tabs.FindWindowByName('autostart').SetValue(self.pref.compartir.autostart)
 
         # Preparar ventana
 
@@ -114,6 +114,6 @@ class FramePreferencias(wx.Frame):
     def OnSave(self, event):
         self.pref.profile.name = self.FindWindowByName('name').GetValue()
         self.pref.profile.description = self.FindWindowByName('description').GetValue()
-        self.pref.compartir.auto_start = self.FindWindowByName('auto_start').GetValue()
+        self.pref.compartir.autostart = self.FindWindowByName('autostart').GetValue()
         self.pref.save()
         self.Close()
